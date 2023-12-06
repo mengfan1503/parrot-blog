@@ -1,0 +1,12 @@
+.test {
+  width: 100px;
+}
+.imgBox {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+.imgBox .name1 {
+  background-size: cover;
+  background-position: 50% 50%;
+}
