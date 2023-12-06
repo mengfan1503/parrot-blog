@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 // import { Button, Image } from 'antd'
 import * as API from '../../api/test/test'
-import './style/index.css'
+import './style/index.scss'
 
 export function Layout() {
   const [count, setCount] = useState(0)
@@ -50,21 +50,14 @@ export function Layout() {
         <li>
           <span>img4</span>
         </li>
+        <li>
+          <span>img5</span>
+        </li>
+        <li>
+          <span>img6</span>
+        </li>
       </ul>
-      <div className="test"></div>
-      {/* <div className="imgBox">
-        <img src={testimg1} width={'100%'} alt="" />
-        <span style={{ background: testimg1 }}></span>
-      </div>
-      <div className="imgBox">
-        <img src={testimg2} width={'100%'} alt="" />
-      </div>
-      <div className="imgBox">
-        <img src={testimg3} width={'100%'} alt="" />
-      </div>
-      <div className="imgBox">
-        <img src={testimg4} width={'100%'} alt="" />
-      </div> */}
+      hhhhhhhhhhhhhhhhhhhhhhhh
     </div>
   )
 }
