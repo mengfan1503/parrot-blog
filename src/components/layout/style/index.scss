@@ -1,4 +1,5 @@
-.imgBox {
+$clsPreFix: 'layout-com';
+.backgroundImgsBox {
   position: absolute;
   top: 0;
   left: 0;
@@ -87,8 +88,21 @@
         opacity: 0
     }
 }
+  
 }
-
-.test {
-  background-color: #fff;
+.#{$clsPreFix} {
+  background-color: transparent;
+  &-header {
+    width: 0;
+    height: 0;
+  }
+  &-fotter {
+    width: 0;
+    height: 0;
+    padding: 0;
+  }
+  &-content {
+    padding: 0 400px;
+    padding-top: 100px;
+  }
 }

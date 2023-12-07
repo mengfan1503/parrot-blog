@@ -1,45 +1,23 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-// import { Button, Image } from 'antd'
 import * as API from '../../api/test/test'
 import './style/index.scss'
-
-export function Layout() {
-  const [count, setCount] = useState(0)
+import MainRoute from '../../routes/main'
+import { Flex, Layout, Space } from 'antd'
+import { layoutClsPreFix } from '../../constants'
+const { Header, Footer, Sider, Content } = Layout
+const clsPreFix = layoutClsPreFix
+export function LayoutCom() {
   // const [imgSrc, setImgSrc] = useState('https://d.c-launcher.com/wallpaper/img/953/53b26650e4b0dc540acf5681/1404200528681/wallpaper.jpg')
   const params = useParams()
   console.log(params)
 
-  useEffect(() => {
-    window.document.title = count + ''
-  }, [count])
-
-  // const getCatImg = () => {
-  //   console.log('11')
-  //   API.getCatImg().then((res: any) => {
-  //     const urlss = res.data.response.urls
-  //     setImgSrc(urlss.full)
-  //   })
-  // }
-
-  // const getText = () => {
-  //   console.log('1221')
-  //   API.getText().then((res) => {
-  //     console.log(res)
-  //     setCount(res.data)
-  //   })
-  // }
-
-  return (
-    <div className="box">
-      {/* <div><Button type="primary" onClick={()=>setCount(count+1)}>{count}</Button></div>
-            <div><Button type="primary" onClick={()=>{getCatImg()}}>getUrl</Button></div>
-            <div><Button type="primary" onClick={()=>{getText()}}>getText</Button></div>
-            <img src={imgSrc} alt="" /> */}
-      <ul className="imgBox">
+  const renderBackground = () => {
+    return (
+      <ul className="backgroundImgsBox">
         <li>
-          <span className="name1">img1</span>
+          <span>img1</span>
         </li>
         <li>
           <span>img2</span>
@@ -57,7 +35,18 @@ export function Layout() {
           <span>img6</span>
         </li>
       </ul>
-      hhhhhhhhhhhhhhhhhhhhhhhh
-    </div>
+    )
+  }
+
+  const renderRoute = () => {
+    return <MainRoute></MainRoute>
+  }
+
+  return (
+    <Layout rootClassName={`${clsPreFix}`}>
+      <Header className={`${clsPreFix}-header`}>{renderBackground()}</Header>
+      <Content className={`${clsPreFix}-content`}>{renderRoute()}</Content>
+      <Footer className={`${clsPreFix}-fotter`}></Footer>
+    </Layout>
   )
 }

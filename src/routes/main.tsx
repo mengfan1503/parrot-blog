@@ -1,15 +1,16 @@
-import { Component } from "react";
-import { Route, Routes, RouteProps, Navigate } from "react-router-dom";
-import { Layout } from "../components/layout";
+import { Component } from 'react'
+import { Route, Routes, RouteProps, Navigate } from 'react-router-dom'
+import LoginCom from '../components/login'
 class MainRoute extends Component<RouteProps> {
-    render() {
-        return (
-            <Routes>
-                <Route path="/center/:id" element={<Layout></Layout>}></Route>
-                <Route path="/center" element={<Navigate to={'/center/321'}></Navigate>}></Route>
-            </Routes>
-        );
-    }
+  render() {
+    return (
+      <Routes>
+        <Route path="/login" element={<LoginCom></LoginCom>}></Route>
+        <Route path="/center" element={<Navigate to={'/login'}></Navigate>}></Route>
+        <Route path="/" element={<Navigate to={'/login'}></Navigate>}></Route>
+      </Routes>
+    )
+  }
 }
 
-export default MainRoute;
+export default MainRoute
