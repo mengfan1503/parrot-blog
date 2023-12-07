@@ -1,0 +1,20 @@
+.loginCom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 550px;
+  padding: 30px 50px;
+  padding-bottom: 10px;
+  height: fit-content;
+  box-shadow: var(--card-shadow);
+  background-color: rgba(255,255,255,.3);
+  border-radius: 20px;
+
+  .login-form-forgot {
+    float: right;
+  }
+  .login-form-button {
+    width: 100%;
+  }
+}
